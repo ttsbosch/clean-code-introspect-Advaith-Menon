@@ -18,9 +18,13 @@ int StringCalculator::add(string input)
   std::stringstream ss(input);
   std::string token;
   containsNegative(input);
-  while (getline(ss, token, ',')) {
-        int num = std::stoi(token);
-        sum += num;
+  char delimiter = ',';
+
+    while (getline(ss, token, delimiter)) {
+        size_t pos;
+        while ((pos = token.find('\n')) != std::string::npos) {
+            token.replace(pos, 1, ""); // Remove newline characters
+        }
+        sum += std::stoi(token);
     }
-  return sum;
 }
