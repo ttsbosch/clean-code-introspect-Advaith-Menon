@@ -8,7 +8,17 @@ void StringCalculator::containsNegative(const std::string& input) {
         throw std::runtime_error("Negative numbers not allowed");
     }
 }
+void StringCalculator::removeNewLineCharacters(const std::string& input)
+{
+   char delimiter = ',';
 
+    while (getline(ss, token, delimiter)) {
+        size_t pos;
+        while ((pos = token.find('\n')) != std::string::npos) {
+            token.replace(pos, 1, ""); // Remove newline characters
+        }
+    }
+}
 
 int StringCalculator::add(string input)
 {
@@ -21,10 +31,6 @@ int StringCalculator::add(string input)
   char delimiter = ',';
 
     while (getline(ss, token, delimiter)) {
-        size_t pos;
-        while ((pos = token.find('\n')) != std::string::npos) {
-            token.replace(pos, 1, ""); // Remove newline characters
-        }
         sum += std::stoi(token);
     }
 }
