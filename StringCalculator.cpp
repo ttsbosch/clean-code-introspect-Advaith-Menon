@@ -11,7 +11,8 @@ void StringCalculator::containsNegative(const std::string& input) {
 void StringCalculator::removeNewLineCharacters(const std::string& input)
 {
    char delimiter = ',';
-
+   std::stringstream ss(input);
+   std::string token;
     while (getline(ss, token, delimiter)) {
         size_t pos;
         while ((pos = token.find('\n')) != std::string::npos) {
