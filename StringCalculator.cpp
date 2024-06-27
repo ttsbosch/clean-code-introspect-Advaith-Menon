@@ -21,4 +21,5 @@ int StringCalculator::add(string input)
     while (getline(ss, token, delimiter)) {
         sum += std::stoi(token);
     }
+   return sum;
 }
