@@ -1,6 +1,7 @@
 #include "StringCalculator.h"
 #include<iostream>
 #include<string>
+#include<sstream>
 using namespace std;
 int StringCalculator::add(string input)
 {
