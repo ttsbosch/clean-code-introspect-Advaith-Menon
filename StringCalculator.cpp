@@ -4,7 +4,6 @@
 using namespace std;
 int StringCalculator::add(string input)
 {
-  if(input.compare("")==0)
+  if(input.compare("")==0 || input == '0')
     return 0;
 }
- 
