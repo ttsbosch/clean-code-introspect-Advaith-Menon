@@ -29,6 +29,7 @@ int StringCalculator::add(string input)
   std::stringstream ss(input);
   std::string token;
   containsNegative(input);
+  removeNewLineCharacter(input);
   char delimiter = ',';
 
     while (getline(ss, token, delimiter)) {
