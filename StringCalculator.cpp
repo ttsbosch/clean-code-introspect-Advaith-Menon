@@ -11,7 +11,11 @@ int StringCalculator::add(string input)
   std::stringstream ss(input);
   std::string token;
   while (getline(ss, token, ',')) {
-        sum += std::stoi(token);
+        int num = std::stoi(token);
+        if (num < 0) {
+            throw std::runtime_error("Negative numbers not allowed");
+        }
+        sum += num;
     }
   return sum;
 }
