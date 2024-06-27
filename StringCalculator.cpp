@@ -2,10 +2,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class StringCalculator
+int StringCalculator::add(string input)
 {
-   public:
-   int add(string input)
-   {
-   }
-};
+}
