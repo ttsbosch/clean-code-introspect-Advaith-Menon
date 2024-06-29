@@ -25,7 +25,10 @@ int StringCalculator::convertAndSum(const std::vector<std::string>& tokens) {
     int sum = 0;
     for (const auto& token : tokens) {
         if (!token.empty()) {
-            sum += std::stoi(token);
+            int number = std::stoi(token);
+            if (number <= 1000) {
+                sum += number;
+            }
         }
     }
     return sum;
