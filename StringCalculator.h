@@ -11,5 +11,4 @@ class StringCalculator
    void containsNegative(const std::string& input);
    std::vector<std::string> split(const std::string& s, const std::string& delimiters);
    int convertAndSum(const std::vector<std::string>& tokens);
-   bool isNumberGreaterThan1000(int num);
 };
