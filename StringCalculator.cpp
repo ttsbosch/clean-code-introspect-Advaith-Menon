@@ -21,18 +21,15 @@ std::vector<std::string> StringCalculator::split(const std::string& s, const std
     tokens.emplace_back(s.substr(start));
     return tokens;
 }
-bool StringCalculator::isNumberGreaterThan1000(int num)
-{
-   if(num>1000)
-      return true;
-    return false;
-}
 int StringCalculator::convertAndSum(const std::vector<std::string>& tokens) {
+   auto isGreaterThan1000 = [](int number) -> bool {
+        return number > 1000;
+    };
    int sum = 0; 
    for (const auto& token : tokens) {
         if (!token.empty()) {
             int number = std::stoi(token);
-            if (isNumberGreaterThan1000(number) == false) {
+            if (!isGreaterThan1000(number)) {
                 sum += number;
             }
         }
